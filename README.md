@@ -15,20 +15,25 @@ by Scott Chacon.
 Look for the tag ![good_first_issue](https://img.shields.io/badge/-good%20first%20issue-gold.svg). 
 This indicates that the maintainers will welcome a pull request fixing this issue.  
 
+If you contribute to this lesson and would like to acknowledge specific funding support, please add it to the Funding section of the README below.
+
+## Author(s)
+
+The contributing author(s) to this lesson are:
+
+* FIXME
+* FIXME
+
 
 ## Maintainer(s)
 
-Current maintainers of this lesson are 
+There are no current maintainers of this lesson. If you would like to serve as a maintainer please [contact us](https://intersect-training.org/contact/).
 
-* FIXME
-* FIXME
-* FIXME
-
-
-## Authors
-
-A list of contributors to the lesson can be found in [AUTHORS](AUTHORS)
 
 ## Citation
 
-To cite this lesson, please consult with [CITATION](CITATION)
+To cite this lesson, please consult with [CITATION](CITATION).
+
+## Funding
+
+The INTERSECT project is supported by NSF awards [2017424](https://www.nsf.gov/awardsearch/showAward?AWD_ID=2017424) and [2017259](https://www.nsf.gov/awardsearch/showAward?AWD_ID=2017259).
