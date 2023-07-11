@@ -1,6 +1,6 @@
 ---
 title: "Exit Codes"
-teaching: 10
+teaching: 5 
 exercises: 10
 objectives:
   - Understand exit codes
