@@ -1,6 +1,6 @@
-# FIXME Lesson title
+# CI/CD
 
-This repository generates the corresponding lesson website from [INTERESECT](https://intersect-training.org/) repertoire of lessons.
+This repository generates the corresponding lesson website for [CI-CD](https://intersect-training.org/CI-CD), which is part of the [INTERSECT](https://intersect-training.org) training collection.
 The lesson format and structure is based off the [The Carpentries](https://carpentries.org/).
 
 ## Contributing
@@ -21,13 +21,13 @@ If you contribute to this lesson and would like to acknowledge specific funding 
 
 The contributing author(s) to this lesson are:
 
-* FIXME
-* FIXME
+* Marshall McDonnell, Oak Ridge National Laboratory, mcdonnellmt@ornl.gov
 
 
 ## Maintainer(s)
 
-There are no current maintainers of this lesson. If you would like to serve as a maintainer please [contact us](https://intersect-training.org/contact/).
+The current maintainer of this lesson is:
+* [Marshall McDonnell](https://github.com/marshallmcdonnell)
 
 
 ## Citation
