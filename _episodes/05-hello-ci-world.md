@@ -12,13 +12,18 @@ keypoints:
   - Pipelines are made of jobs with steps.
 ---
 
+Now, we will be adding a GitHub Actions YAML file to a repository.
+This is all we will need to run CI using GitHub Actions.
+
+If you haven't already, use the [Setup instructions](/setup.md)
+to get the example `intersect-training-cicd` repository setup locally
+and remotely in GitHub.
+
 ## Adding CI/CD to a project
 
 The first thing we'll do is create a `.github/workflows/main.yml` file in the project.
 ```bash
-mkdir name-of-your-project/
-cd name-of-your-project/
-git init # if not initialized yet...
+cd intersect-training-cicd
 mkdir -p .github/workflows
 ```
 
@@ -30,25 +35,30 @@ jobs:
   greeting:
     runs-on: ubuntu-latest
     steps:
-      -run: echo hello world
+      - name: Greeting!
+        run: echo hello world
 ~~~
 {: .language-yaml}
 
 ## Run GitHub Actions
 
-
-We've created the `.github/workflows/main.yml` file but it's not yet on GitHub. Next step we'll push these changes to GitHub so that it can run our job.
-Since we're adding a new feature (Actions) to our project, we'll work in a feature branch. This is just a human-friendly named branch to indicate that it's adding a new feature.
+We've created the `.github/workflows/main.yml` file but it's not yet on GitHub.
+Next step we'll push these changes to GitHub so that it can run our job.
+Since we're adding a new feature (adding CI) to our project, we'll work in a feature branch.
 
 ```bash
-cd name-of-your-project/
-git checkout -b feature/add-actions
+cd intersect-training-cicd/
+git checkout -b add-ci-via-actions
 git add .github/workflows/main.yml
-git commit -m "my first actions"
-git push -u origin feature/add-actions
+git commit -m "Adds initial GitHub Actions for CI"
+git push -u origin add-ci-via-actions
 ```
 
-And that's it! You've successfully run your CI/CD job and you can view the output. You just have to navigate to the GitHub webpage for the `name-of-your-project` project and hit Actions button, you will find details of your job (status, output,...).
+And that's it!
+You've successfully run your CI job and you can view the output.
+You just have to navigate to the GitHub webpage for the `intersect-training-cicd` project
+and hit Actions button.
+There, you will find details of your job (status, output,...).
 
 *TODO: add a image of workflow.... like from [here](https://hsf-training.github.io/hsf-training-cicd-github/07-hello-world-ci/index.html)*
 
