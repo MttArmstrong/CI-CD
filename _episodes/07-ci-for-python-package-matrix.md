@@ -387,7 +387,8 @@ jobs:
 > ## Action: Add cross-platform testing to CI YAML
 > 
 > Using the "latest" labels, add Linux, Mac, and Windows testing to our current CI YAML.
-> HINT: You will need a variable under `matrix` that you use for `runs-on`.
+>
+> HINT: You will need a variable under `matrix` that you use for `runs-on` and also for the `include`.
 >
 > > ## Solution
 > > ~~~
