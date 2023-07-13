@@ -448,7 +448,12 @@ That wraps up the CI portion for the Python package.
 If you'd like, you can add more steps to the jobs to perform other checks
 (i.e. linting, format checks, documentation builds, etc.)
 
-Once you are happy, let's open up a pull request for this branch and get it merged back into `main`!
+Once you are happy, let's use our open pull request for this branch and get it merged back into `main`!
+
+You'll notice that the Pull Request shows us that a CI check didn't pass
+but the overall workflow passed and able to be merged in!
+
+![GitHub Actions pull request]({{ page.root }}/fig/python-ci-matrix-cross-platform-pull-request.png)
 
 ## Clean up local repository
 To get your local repository up-to-date, you can run the following:
