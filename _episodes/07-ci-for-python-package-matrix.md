@@ -326,6 +326,13 @@ Like previously discussed, exit codes are what CI tools / solution are built aro
 
 ![GitHub Actions allow failure]({{ page.root }}/fig/python-ci-matrix-allow-failure.png)
 
+> ## Experimental CI jobs
+> 
+> This allows us to run all kinds of "experimental" jobs.
+> Examples are trying new versions of software or checking deprecated versions.
+>
+{: .callout }
+
 ## Cross-platform testing
 
 Uh oh... the domain scientist is back with an issue.
