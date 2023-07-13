@@ -34,6 +34,7 @@ But first...
 > > * Testing passes ([pytest][pytest] for unit testing or [nox][nox] for parallel Python environment testing)
 > > * Code is of quality (i.e. [ruff][ruff] or [flake8][flake8] for [linting][lint] or [mccabe][mccabe] for reducing [cyclomatic complexity][cc]
 > > * Code coforms to project formatting guide (i.e. [black][black] for formatting)
+> > * Code testing coverage does not drop significanly (i.e. [pytest-cov][pytest-cov] or [Coverage.py][coverage])
 > > * Static type checking (i.e. [mypy][mypy] )
 > > * Documentation builds (i.e. [sphinx][sphinx] )
 > > * Security vulnerabilities (i.e. [bandit][bandit])
@@ -210,6 +211,8 @@ Similarly, we see our open Pull Request has updated dynamically with updates!
 [cc]: https://en.wikipedia.org/wiki/Cyclomatic_complexity
 [bandit]: http://www.lizard.ws/
 [black]: https://black.readthedocs.io
+[pytest-cov]: https://pytest-cov.readthedocs.io
+[coverage]: https://coverage.readthedocs.io
 [mypy]: https://www.mypy-lang.org/
 [sphinx]: https://www.sphinx-doc.org
 [bandit]: https://bandit.readthedocs.io
