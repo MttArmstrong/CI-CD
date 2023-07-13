@@ -92,7 +92,7 @@ To know whether your Python has `pytest`, just run `python -c "import pytest"`. 
 If you're having issues, **please let us know immediately**
 since you might not be able to follow this lesson without a proper setup.
 
-[download-site]:{{ site.url }}/download/intersect-training-cicd.zip
+[download-site]: https://github.com/INTERSECT-training/CI-CD/raw/main/downloads/intersect-training-cicd.zip
 
 ## Set up Docker (optional)
 
