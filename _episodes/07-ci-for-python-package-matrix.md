@@ -407,6 +407,7 @@ jobs:
 > >         allow_failure: [false]
 > >         include:
 > >           - python-version: "3.12.0-beta.4"
+> >             runs-on: ubuntu-latest
 > >             allow_failure: true
 > >
 > >     steps:
