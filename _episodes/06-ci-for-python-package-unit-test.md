@@ -52,7 +52,7 @@ But first...
 
 As of right now, your `.github/workflows/main.yml` YAML file should look like
 ~~~
-name: example
+name: Code Checks
 on: push
 jobs:
   greeting:
@@ -66,11 +66,13 @@ jobs:
 Overall, we will want to get our CI to run our unit tests via [pytest][pytest].
 But first, let's figure out how to setup a Python environment.
 
+Let's change the name from `example` to `Code Checks` to better reflect what we will be doing.
+
 We will add another job (named `test-python-3-10`)
 and add the steps to setup a Python 3.10 environment to our YAML file:
 
 ~~~
-name: example
+name: Code Checks
 on: push
 jobs:
   greeting:
@@ -135,7 +137,7 @@ We now have our Python environment setup in CI.
 Let's add running our tests!
 
 ~~~
-name: example
+name: Code Checks
 on: push
 jobs:
   greeting:

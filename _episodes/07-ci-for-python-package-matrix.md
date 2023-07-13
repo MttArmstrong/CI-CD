@@ -26,7 +26,7 @@ One approach would be to add another job to run tests for Python 3.11 as well.
 
 Up to this point, we currently have the following:
 ~~~
-name: example
+name: Code Checks
 on: push
 jobs:
   greeting:
@@ -67,7 +67,7 @@ Let's add testing a different version of Python in our CI!
 >
 > > ## Solution
 > > ~~~
-> > name: example
+> > name: Code Checks
 > > on: push
 > > jobs:
 > > 
@@ -140,7 +140,7 @@ There is no reason we should not apply this principle to CI!
 > Let's update our `.github/workflow/main.yml` and use `matrix`.
 >
 > ~~~
-> name: example
+> name: Code Checks
 > on: push
 > jobs:
 > 
@@ -274,7 +274,7 @@ More detail: [https://docs.github.com/en/actions/using-workflows/workflow-syntax
 >
 > > ## Solution
 > > ~~~
-> > name: example
+> > name: Code Checks
 > > on: push
 > > jobs:
 > > 
@@ -375,7 +375,7 @@ jobs:
 >
 > > ## Solution
 > > ~~~
-> > name: example
+> > name: Code Checks
 > > on: push
 > > jobs:
 > > 
