@@ -160,11 +160,27 @@ jobs:
 ~~~
 {: .language-yaml }
 
+Using the above test YAML, let's upload this and perform a release to run the CD pipeline.
+
+First, checkout a new branch for CD from `main`.
+
+```bash
+git checkout -b add-cd
+git add .github/workflows/releases.yml
+git commit -m "Adds build + test publish to CD"
+git push -u origin add-cd
+```
+
+Go ahead and merge this in `main` as well.
+
+Then, run a GitHub Release.
+
+*TODO: Add an image of running CD...*
+
 > ## Action: Test out the publish YAML
 >
-> Using the above test YAML, perform a release so the CD pipeline ran.
+> Does the CD run successfully?
 >
-> Does the pipeline run successfully?
 > > ## Solution
 > > No. 
 > {: .solution }
