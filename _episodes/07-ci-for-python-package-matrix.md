@@ -1,6 +1,6 @@
 ---
 title: "Matrix"
-teaching: 10
+teaching: 15
 exercises: 15
 questions:
   - How do I run CI for multiple Python versions and /or different platforms?
@@ -409,6 +409,25 @@ jobs:
 > > {: .language-yaml}
 > {: .solution}
 {: .challenge}
+
+Let's push these changes and see how it goes!
+
+```bash
+cd intersect-training-cicd/
+git checkout -b add-ci
+git add .github/workflows/main.yml
+git commit -m "Adds cross-platform testing to CI"
+git push -u origin add-ci
+```
+
+## Pull Request
+
+That wraps up the CI portion for the Python package.
+
+If you'd like, you can add more steps to the jobs to perform other checks
+(i.e. linting, format checks, documentation builds, etc.)
+
+Once you are happy, let's open up a pull request for this branch and get it merged back into `main`!
 
 [dry]: https://en.wikipedia.org/wiki/Don%27t_repeat_yourself
 [runs-on]: https://docs.github.com/en/actions/using-workflows/workflow-syntax-for-github-actions#jobsjob_idruns-on
