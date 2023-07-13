@@ -291,6 +291,7 @@ To setup using TestPyPi, we need to:
 ![register]({{ path.root }}/fig/testpypi-register.md)
 
 * Get an [API token](https://pypi.org/help/#apitoken) so we can have GitHub authenticate to TestPyPi on our behalf. Go to the TestPyPi and [get an API token](https://test.pypi.org/manage/account/#api-tokens)
+
 ![token]({{ path.root }}/fig/testpypi-api-token.md)
 
 * Go to `Settings` -> `Secrets` -> `Actions` in the GitHub UI
@@ -322,5 +323,11 @@ Mainly, we need the following to replace our test publish step:
 
 The `secrets` is a way to gain access to and pull in secrets stored in GitHub into CI/CD using GitHub Actions.
 
+> ## DISCLAIMER
+>
+> Since we will be trying to upload a package, we might get a "clash" with an existing name.
+> If so, change the name of the project to something unique in the pyproject.toml.
+>
+{: .callout }
 
 {% include links.md %}
