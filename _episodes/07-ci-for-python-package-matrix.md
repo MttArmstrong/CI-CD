@@ -32,7 +32,8 @@ jobs:
   greeting:
     runs-on: ubuntu-latest
     steps:
-      -run: echo hello world
+      - name: Greeting!
+        run: echo hello world
 
   test-python-3-10:
     name: Check Python 3.10 on Ubuntu
