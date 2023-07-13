@@ -46,7 +46,7 @@ But first...
 > don't feel you need to add all the checks at the beginning of a project.
 > First, pick the ones that are  "must haves" or easier to implement.
 > Then, iteratively improve your pipeline.
-{: .callout
+{: .callout }
 
 ## Setup Python environment in CI 
 
@@ -104,6 +104,7 @@ This one is used all the time.
 
 > ## GitHub Acions Marketplace
 > GitHub has what they call a ["Marketplace" for "Actions"][marketplace-actions] where you can search for them.
+{: .callout }
 
 There is a Marketplace page for `actions/checkout` ([Marketplace page][actions-checkout-marketplace]
 and also a GitHub repository for the source code ([GitHub][actions-checkout-github].
