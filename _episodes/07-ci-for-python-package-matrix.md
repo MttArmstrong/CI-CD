@@ -243,24 +243,27 @@ We also must add the `allow_failure` "metadata" to the other members of the matr
 
 More detail: [https://docs.github.com/en/actions/using-workflows/workflow-syntax-for-github-actions#jobsjob_idstrategymatrixinclude](https://docs.github.com/en/actions/using-workflows/workflow-syntax-for-github-actions#jobsjob_idstrategymatrixinclude)
 
-So if we **only** want to allow the job with version set to `3.12.0-beta.4` to fail without failing the workflow run, we need something like:
-
-Then the following would work for a job:
-~~~
-jobs:
-  job:
-    runs-on: ubuntu-latest
-    continue-on-error: {% raw %}${{ matrix.allow_failure }}{% endraw %}
-    strategy:
-      fail-fast: true
-      matrix:
-        python-versions: ["3.10", "3.11"]
-        allow_failure: [false]
-      include:
-        - python-versions: "3.12.0-beta.4" 
-          allow_failure: true
-~~~
-{: .language-yaml}
+> ## Putting it together for Python experimental job...
+>
+> So if we **only** want to allow the job with version set to `3.12.0-beta.4` to fail without failing the workflow run, we need something like:
+>
+> Then the following would work for a job:
+> ~~~
+> jobs:
+>   job:
+>     runs-on: ubuntu-latest
+>     continue-on-error: {% raw %}${{ matrix.allow_failure }}{% endraw %}
+>     strategy:
+>       fail-fast: true
+>       matrix:
+>         python-versions: ["3.10", "3.11"]
+>         allow_failure: [false]
+>       include:
+>         - python-versions: "3.12.0-beta.4" 
+>           allow_failure: true
+> ~~~
+> {: .language-yaml}
+{: .callout }
 
 > ## Action: Add experimental job that is allowed to fail in the matrix
 >
