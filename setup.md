@@ -73,12 +73,19 @@ To know whether your Python has `pytest`, just run `python -c "import pytest"`. 
   unzip intersect-training-cicd.zip
   cd intersect-training-cicd/
   ```
+
 - Add the code to your personal GitHub account
 
-  Set the remote
+  Make this diretory a local git repository
+  ```bash
+  git init
+  ```
+
+  Set the remote for the local repository using the repository you made above
   ```bash
   git remote set-url origin git@github.com:<GitHub username>/intersect-training-cicd.git
   ```
+
   Check the name of the current remote:
   ```bash
   git remote -v
