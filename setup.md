@@ -83,12 +83,23 @@ To know whether your Python has `pytest`, just run `python -c "import pytest"`. 
 
   Set the remote for the local repository using the repository you made above
   ```bash
-  git remote set-url origin git@github.com:<GitHub username>/intersect-training-cicd.git
+  git remote add origin git@github.com:<GitHub username>/intersect-training-cicd.git
   ```
 
   Check the name of the current remote:
   ```bash
   git remote -v
+  ```
+
+  Checkout `main` (if not already)
+  ```bash
+  git checkout -b main
+  ```
+
+  Stage and commit new project changes to `main`
+  ```bash
+  git add .
+  git commit -m "Adds initial project example"
   ```
 
   The last step is to run the push command as follows
