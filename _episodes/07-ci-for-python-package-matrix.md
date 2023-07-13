@@ -1,7 +1,7 @@
 ---
 title: "Matrix"
-teaching: 5 
-exercises: 10
+teaching: 10
+exercises: 15
 questions:
   - How do I run CI for multiple Python versions and /or different platforms?
 objectives:
