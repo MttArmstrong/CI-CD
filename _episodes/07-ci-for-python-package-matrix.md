@@ -429,6 +429,14 @@ If you'd like, you can add more steps to the jobs to perform other checks
 
 Once you are happy, let's open up a pull request for this branch and get it merged back into `main`!
 
+To get your local repository up-to-date, you can run the following:
+```
+git checkout main
+git pull
+git remote prune origin # prune any branches deleted in the remote / GitHub that are still local
+git branch -D add-ci # optional
+```
+
 [dry]: https://en.wikipedia.org/wiki/Don%27t_repeat_yourself
 [runs-on]: https://docs.github.com/en/actions/using-workflows/workflow-syntax-for-github-actions#jobsjob_idruns-on
 [runner-types]: https://docs.github.com/en/actions/using-workflows/workflow-syntax-for-github-actions#choosing-github-hosted-runners
