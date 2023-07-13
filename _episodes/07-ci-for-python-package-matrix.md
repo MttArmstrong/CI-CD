@@ -111,10 +111,9 @@ Let's add testing a different version of Python in our CI!
 Now, let's add this so we can catch any Python 3.11 bugs going forward!
 
 ```bash
-git checkout -b add-ci-test-py311
 git add .github/workflows/main.yml
 git commit -m "Adds job to CI for Python 3.11"
-git push -u origin add-ci-test-py311
+git push
 ```
 
 Check the output!
