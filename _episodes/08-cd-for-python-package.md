@@ -258,45 +258,45 @@ Let's add a "test" `publish` job.
 {: .challenge }
 
 
-~~~
-name: Releases
+Let's add these changes and push!
 
-on:
-    workflow_dispatch:
-    release:
-      types:
-        - published
+```bash
+git add .github/workflows/releases.yml
+git commit -m "Fixes build + test publish to CD"
+git push
+```
 
-jobs:
-  dist:
-    runs-on: ubuntu-latest
-    steps:
-      - uses: actions/checkout@v3
+Perform another manual run for the Releases workflow and check the results!
 
-      - name: Build SDist & wheel
-        run: pipx run build
+![pipeline]({{ path.root }}/fig/python-cd-pipeline-pass.md)
 
-      - uses: actions/upload-artifact@v3
-        with:
-          name: "build-artifact"
-          path: dist/*
+We have a successfful pipeline with the proper dependencies and the artifacts!
 
-  publish:
-    runs-on: ubuntu-latest
-    steps:
-      - uses: actions/download-artifact
-        with:
-          name: "build-artifact"
-          path: dist
+We are ready to swap out the test publishing step with a more realistic example.
 
-      - name: Publish release
-        run: echo "Uploading!"
-~~~
-{: .language-yaml }
+## Publish to Test PyPi package repository
 
+Instead of creating a "production" version in [PyPi](https://pypi.org/),
+we can use [Test PyPi](https://test.pypi.org/) instead.
 
+> ## Notice: The following requires createing an account on TestPyPi, putting secrets in the GitHub repository, and uploading a Python package to TestPyPi.
+> 
+> If you do not feel comfortable with these tasks, feel free to just read along
+{: .callout }
 
-{: .language-yaml }
+To setup using TestPyPi, we need to:
+* [Register](https://test.pypi.org/account/register/) for an account on TestPyPi
+![register]({{ path.root }}/fig/testpypi-register.md)
+
+* Get an [API token](https://pypi.org/help/#apitoken) so we can have GitHub authenticate to TestPyPi on our behalf. Go to the TestPyPi and [get an API token](https://test.pypi.org/manage/account/#api-tokens)
+![token]({{ path.root }}/fig/testpypi-api-token.md)
+
+* Go to `Settings` -> `Secrets` -> `Actions` in the GitHub UI
+![secrets]({{ path.root }}/fig/github-secrets.md)
+
+* Add the TestPyPi API token to GitHub Secrets (call it `TESTPYPI_API_TOKEN`)
+![secrets-api-token]({{ path.root }}/fig/github-secrets-api-token.md)
+
 [workflow-dispatch]: https://docs.github.com/en/actions/using-workflows/events-that-trigger-workflows#workflow_dispatch
 [release-action]: https://docs.github.com/en/actions/using-workflows/events-that-trigger-workflows#release
 [release-github]: https://docs.github.com/en/repositories/releasing-projects-on-github/managing-releases-in-a-repository#creating-a-release
