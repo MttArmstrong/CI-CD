@@ -224,8 +224,8 @@ continue-on-error: true
 
 More details: [https://docs.github.com/en/actions/using-workflows/workflow-syntax-for-github-actions#jobsjob_idstrategyfail-fast](https://docs.github.com/en/actions/using-workflows/workflow-syntax-for-github-actions#jobsjob_idstrategyfail-fast)
 
-Finally, we need to add this experimental job to the matrix
-but also flag it as allowed to fail somehow.
+Finally, we need to add this experimental job to the matrix.
+Also, we need to flag it as "allowed to fail" somehow.
 
 For this, we use `include` to add a single extra job to the matrix with "metadata".
 ~~~
