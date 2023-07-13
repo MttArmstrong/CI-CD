@@ -173,9 +173,9 @@ git push -u origin add-cd
 
 Go ahead and merge this in `main` as well.
 
-Then, run a GitHub Release.
+Then, let's go into the Actions tab and run the Release job from the UI:
 
-*TODO: Add an image of running CD...*
+![Release manual]({{ page.root }}/fig/python-cd-run-workflow.png)
 
 > ## Action: Test out the publish YAML
 >
