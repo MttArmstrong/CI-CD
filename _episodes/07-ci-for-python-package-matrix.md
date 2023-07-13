@@ -182,7 +182,7 @@ We can push the changes to GitHub and see how it will look like.
 ~~~
 git add .github/workflows/main.yml
 git commit -m "Adds multi-version Python testing to CI via matrix"
-git push -u origin add-ci
+git push
 ~~~
 {: .language-bash}
 
