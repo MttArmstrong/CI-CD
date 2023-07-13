@@ -319,6 +319,12 @@ git add .github/workflows/main.yml
 git commit -m "Adds experimental Python 3.12.0-beta.4 test to CI"
 git push -u origin add-ci
 ```
+We see that the overall workflow passed even though the Python 3.12.0-beta.4 job failed!
+
+Also, note that we see that GitHub Actions reports an exit code that is non-zero!
+Like previously discussed, exit codes are what CI tools / solution are built around.
+
+![GitHub Actions allow failure]({{ page.root }}/fig/python-ci-matrix-allow-failure.png)
 
 ## Cross-platform testing
 
