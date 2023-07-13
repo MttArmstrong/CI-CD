@@ -137,6 +137,8 @@ There is no reason we should not apply this principle to CI!
 >
 > We could do better using `matrix`. The latter allows us to test the code against a combination of versions in a single job.
 >
+> Let's update our `.github/workflow/main.yml` and use `matrix`.
+>
 > ~~~
 > name: example
 > on: push
@@ -173,7 +175,6 @@ There is no reason we should not apply this principle to CI!
 > More details on matrix: [https://docs.github.com/en/actions/reference/workflow-syntax-for-github-actions](https://docs.github.com/en/actions/reference/workflow-syntax-for-github-actions#jobsjob_idstrategymatrix).
 {: .callout}
 
-Let's update our `.github/workflow/main.yml` and use `matrix`.
 
 We can push the changes to GitHub and see how it will look like.
 ~~~
