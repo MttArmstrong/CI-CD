@@ -47,7 +47,6 @@ Next step we'll push these changes to GitHub so that it can run our job.
 Since we're adding a new feature (adding CI) to our project, we'll work in a feature branch.
 
 ```bash
-cd intersect-training-cicd/
 git checkout -b add-ci
 git add .github/workflows/main.yml
 git commit -m "Adds initial GitHub Actions for CI"
@@ -60,11 +59,11 @@ You just have to navigate to the GitHub webpage for the `intersect-training-cicd
 and hit Actions button.
 There, you will find details of your job (status, output,...).
 
-*TODO: add a image of workflow.... like from [here](https://hsf-training.github.io/hsf-training-cicd-github/07-hello-world-ci/index.html)*
+![GitHub Actions page]({{ page.root }}/fig/hello-ci-actions-tab.png)
 
 From this page, click through until you can find the output for the successful job run which should look like the following
 
-*TODO: add a image of workflow.... like from [here](https://hsf-training.github.io/hsf-training-cicd-github/07-hello-world-ci/index.html)*
+![GitHub Actions page]({{ page.root }}/fig/hello-ci-actions-tab-part2.png)
 
 ## Pull Request
 
