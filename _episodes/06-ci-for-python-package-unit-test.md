@@ -181,6 +181,9 @@ Checkout the results! We see that we now have two jobs running!:
 
 ![Actions]({{ page.root }}/fig/python-ci-actions.png)
 
+We can see the output / results from running `pytest`:
+![Actions test]({{ page.root }}/fig/python-ci-actions-test.png)
+
 Similarly, we see our open Pull Request has updated dynamically with updates!
 
 ![Pull Request]({{ page.root }}/fig/python-ci-pull-request.png)
