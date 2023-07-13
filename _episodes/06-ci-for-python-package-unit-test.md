@@ -125,7 +125,6 @@ So...
 > > * This action helps install a version of Python along with other options
 > > * Marketplace: [https://github.com/marketplace/actions/setup-python](https://github.com/marketplace/actions/setup-python)
 > > * GitHub repository: [https://github.com/actions/setup-python][actions-setup-python-github]
-> > 
 > > * *Bonus:* This will be in the `actions.yml`. Here is the `@v4` version of `actions.yml`: [link](https://github.com/actions/setup-python/blob/v4/action.yml).
 > {: .solution}
 {: .challenge}
