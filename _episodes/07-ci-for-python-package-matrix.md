@@ -60,10 +60,11 @@ Let's add testing a different version of Python in our CI!
 > Then, add a new job called `test-python-3-11`.
 >
 > Have this new job:
-> * Checkout the code
-> * Setup a Python 3.11 environment
-> * Install the package with our test dependencies
-> * Run the tests via `pytest`
+> - Checkout the code
+> - Setup a Python 3.11 environment
+> - Install the package with our test dependencies
+> - Run the tests via `pytest`
+>
 > > ## Solution
 > > ~~~
 > > name: example
@@ -123,7 +124,7 @@ Yet, we just added 13 lines of identical code with only one character change...
 
 ## DRY your CI
 
-"DRY" is an ancronym for "Don't Repeat Yourself",
+"DRY" is an ancronym for ["Don't Repeat Yourself"][dry],
 meaning don't have repeated code in your software.
 This reduces repetition and avoids redundancy.
 
@@ -311,5 +312,7 @@ git add .github/workflows/main.yml
 git commit -m "Adds experimental Python 3.12.0-beta.4 test to CI"
 git push -u origin add-ci
 ```
+
+[dry]: https://en.wikipedia.org/wiki/Don%27t_repeat_yourself
 
 {% include links.md %}
