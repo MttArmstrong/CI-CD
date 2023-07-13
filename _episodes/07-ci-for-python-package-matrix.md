@@ -357,9 +357,9 @@ Inside of the `runs-on` documentation, there is a list of labels we can use to s
 > Using the documentation links above, get the three "latest" labels for Linux, Mac, and Windows.
 >
 > > ## Solution
-> > Linux: `ubuntu-latest`
-> > Mac: `macos-latest`
-> > Windows: `windows-latest`
+> > * Linux: `ubuntu-latest`
+> > * Mac: `macos-latest`
+> > * Windows: `windows-latest`
 > >
 > {: .solution}
 {: .challenge}
