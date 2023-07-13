@@ -387,7 +387,7 @@ jobs:
 > ## Action: Add cross-platform testing to CI YAML
 > 
 > Using the "latest" labels, add Linux, Mac, and Windows testing to our current CI YAML.
-> NOTE: `runs-on` will need to be moved under `matrix` since it will be part of the matrix now.
+> HINT: You will need a variable under `matrix` that you use for `runs-on`.
 >
 > > ## Solution
 > > ~~~
@@ -398,6 +398,7 @@ jobs:
 > >   test-python-versions:
 > >     name: Check Python {% raw %}${{ matrix.python-version }}{% endraw %} on {% raw %}${{ matrix.runs-on }}{% endraw %}
 > >     continue-on-error: {% raw %}${{ matrix.allow_failure }}{% endraw %}
+> >     runs-on: {% raw %}${{ matrix.runs-on }}{% endraw %}
 > >     strategy:
 > >       fail-fast: false
 > >       matrix:
