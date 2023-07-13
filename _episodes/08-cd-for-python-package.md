@@ -191,6 +191,110 @@ Then, let's go into the Actions tab and run the Release job from the UI:
 > {: .solution }
 {: .challenge }
 
+We previously asked about jobs running in sequence or parallel.
+
+By default, jobs run in parallel.
+
+Yet, here, we clearly need to operate in sequence since the build must occur before the publish.
+
+To define this dependency, we need the [`needs`](https://docs.github.com/en/actions/using-workflows/workflow-syntax-for-github-actions#jobsjob_idneeds) command.
+
+From the documentation, `needs` takes either a previous job name or a list of previous job names that are required before this one runs:
+~~~
+jobs:
+  job1:
+  job2:
+    needs: job1
+  job3:
+    needs: [job1, job2]
+~~~
+{: .language-yaml }
+
+Let's add a "test" `publish` job.
+
+> ## Action: Test out the publish YAML - Take 2!
+>
+> Re-write the current YAML using `needs` to fix the dependency issue.
+> Mainly, we need to specify that the `publish` job `needs` the `dist` job to run first.
+>
+> > ## Solution
+> > ~~~
+> > name: Releases
+> >
+> > on:
+> >   workflow_dispatch:
+> >   release:
+> >     types:
+> >       - published
+> >
+> > jobs:
+> >   dist:
+> >     runs-on: ubuntu-latest
+> >     steps:
+> >       - uses: actions/checkout@v3
+> >
+> >       - name: Build SDist & wheel
+> >         run: pipx run build
+> >
+> >       - uses: actions/upload-artifact@v3
+> >         with:
+> >           name: "build-artifact"
+> >           path: dist/*
+> > 
+> >   publish:
+> >     needs: dist
+> >     runs-on: ubuntu-latest
+> >     steps:
+> >       - uses: actions/download-artifact
+> >         with:
+> >           name: "build-artifact"
+> >           path: dist
+> > 
+> >       - name: Publish release
+> >         run: echo "Uploading!"
+> > ~~~
+> > {: .language-yaml }
+> {: .solution }
+{: .challenge }
+
+
+~~~
+name: Releases
+
+on:
+    workflow_dispatch:
+    release:
+      types:
+        - published
+
+jobs:
+  dist:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v3
+
+      - name: Build SDist & wheel
+        run: pipx run build
+
+      - uses: actions/upload-artifact@v3
+        with:
+          name: "build-artifact"
+          path: dist/*
+
+  publish:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/download-artifact
+        with:
+          name: "build-artifact"
+          path: dist
+
+      - name: Publish release
+        run: echo "Uploading!"
+~~~
+{: .language-yaml }
+
+
 
 {: .language-yaml }
 [workflow-dispatch]: https://docs.github.com/en/actions/using-workflows/events-that-trigger-workflows#workflow_dispatch
