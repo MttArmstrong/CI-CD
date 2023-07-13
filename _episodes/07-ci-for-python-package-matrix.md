@@ -146,7 +146,7 @@ There is no reason we should not apply this principle to CI!
 > on: push
 > jobs:
 > 
->   test-python-3-10:
+>   test-python-versions:
 >     name: Check Python {% raw %}${{ matrix.python-version }}{% endraw %} on Ubuntu
 >     runs-on: ubuntu-latest
 >     strategy:
@@ -281,7 +281,7 @@ More detail: [https://docs.github.com/en/actions/using-workflows/workflow-syntax
 > > on: push
 > > jobs:
 > > 
-> >   test-python-3-10:
+> >   test-python-versions:
 > >     name: Check Python {% raw %}${{ matrix.python-version }}{% endraw %} on Ubuntu
 > >     runs-on: ubuntu-latest
 > >     continue-on-error: {% raw %}${{ matrix.allow_failure }}{% endraw %}
@@ -366,7 +366,6 @@ Inside of the `runs-on` documentation, there is a list of labels we can use to s
 
 Using these labels, we could create the following setup to run on all three platforms!
 ~~~
-
 jobs:
   test:
     runs-on: [ubuntu-latest, macos-latest, windows-latest]
@@ -395,7 +394,7 @@ jobs:
 > > on: push
 > > jobs:
 > > 
-> >   test-python-3-10:
+> >   test-python-versions:
 > >     name: Check Python {% raw %}${{ matrix.python-version }}{% endraw %} on {% raw %}${{ matrix.runs-on }}{% endraw %}
 > >     runs-on: [ubuntu-latest, windows-latest, macos-latest]
 > >     continue-on-error: {% raw %}${{ matrix.allow_failure }}{% endraw %}
