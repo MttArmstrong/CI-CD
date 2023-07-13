@@ -189,7 +189,9 @@ That is a much better way to add new versions and we have a DRY-compliant CI!
 ## Test experimental versions in CI
 
 Sometimes in your matrix, you want to push the boundaries of your testing.
+
 An example would be to test up to the latest alpha / beta release of a Python version.
+
 You do not want a failure in such cutting-edge, unstable tests stopping your CI.
 
 At time of writing, the latest supported beta version of Python for the `actions/python-versions` is 3.12.0-beta.4 based on their [GitHub Releases](https://github.com/actions/python-versions/releases).
@@ -315,6 +317,93 @@ git commit -m "Adds experimental Python 3.12.0-beta.4 test to CI"
 git push -u origin add-ci
 ```
 
+## Cross-platform testing
+
+Uh oh... the domain scientist is back with an issue.
+
+After talking with him, you find out his summer intern
+cannot run the python package on their Windows machine.
+
+You have Linux Ubuntu and your domain scientist collaborator / team member has Mac.
+
+How do we test our Python package across Linux, Mac, and Windows (i.e. cross-platform)?
+
+### Selecting the GitHub-hosted runner platform
+
+We honestly already have what we need, the [`runs-on`][runs-on] command!
+
+All we need to know is what values are allowed.
+
+Inside of the `runs-on` documentation, there is a list of labels we can use to select the platform of the runner: [list of labels for runner types][runner-types]
+
+> ## Action: Find out the labels for all three platforms
+>
+> Using the documentation links above, get the three "latest" labels for Linux, Mac, and Windows.
+>
+> > ## Solution
+> > Linux: `ubuntu-latest`
+> > Mac: `macos-latest`
+> > Windows: `windows-latest`
+> >
+
+Using these labels, we could create the following setup to run on all three platforms!
+~~~
+
+jobs:
+  test:
+    runs-on: [ubuntu-latest, macos-latest, windows-latest]
+~~~
+{: .language-yaml}
+
+> ## Not best practice to use "latest"...
+> It is not the best practice to use "latest" versions for the platforms.
+> This practice is essentially testing "experimental" versions of the platforms,
+> instead of the Python version like with the Python 3.12.0-beta.4 example.
+{: .callout }
+
+> ## Action: Add cross-platform testing to CI YAML
+> 
+> Using the "latest" labels, add Linux, Mac, and Windows testing to our current CI YAML.
+>
+> > ## Solution
+> > ~~~
+> > name: example
+> > on: push
+> > jobs:
+> > 
+> >   test-python-3-10:
+> >     name: Check Python ${{ matrix.python-version }} on Ubuntu
+> >     runs-on: [ubuntu-latest, windows-latest, macos-latest]
+> >     continue-on-error: {% raw %}${{ matrix.allow_failure }}{% endraw %}
+> >     strategy:
+> >       fail-fast: true
+> >       matrix:
+> >         python-version: ["3.10", "3.11"]
+> >         allow_failure: [false]
+> >       include:
+> >         - python-versions: "3.12.0-beta.4" 
+> >           allow_failure: true
+> >
+> >     steps:
+> >       - uses: actions/checkout@v3
+> > 
+> >       - name: Setup Python ${{ matrix.version }}
+> >         uses: actions/setup-python@v4
+> >         with:
+> >           python-version: ${{ matrix.version }}
+> > 
+> >       - name: Install package
+> >         run: python -m pip install -e .[test]
+> >
+> >       - name: Test package
+> >         run: python -m pytest
+> > ~~~
+> > {: .language-yaml}
+> {: .solution}
+{: .challenge}
+
 [dry]: https://en.wikipedia.org/wiki/Don%27t_repeat_yourself
+[runs-on]: https://docs.github.com/en/actions/using-workflows/workflow-syntax-for-github-actions#jobsjob_idruns-on
+[runner-types]: https://docs.github.com/en/actions/using-workflows/workflow-syntax-for-github-actions#choosing-github-hosted-runners
 
 {% include links.md %}
