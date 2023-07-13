@@ -63,10 +63,18 @@ There, you will find details of your job (status, output,...).
 
 From this page, click through until you can find the output for the successful job run which should look like the following
 
-![GitHub Actions page]({{ page.root }}/fig/hello-ci-actions-tab-part2.png)
+![GitHub Actions page part 2]({{ page.root }}/fig/hello-ci-actions-tab-part2.png)
 
 ## Pull Request
 
 Lastly, we'll open up a pull request for this branch, since we plan to merge this back into `main` when we're happy with the first iteration of the Actions.
+
+![Pull Request]({{ page.root }}/fig/hello-ci-pull-request-create.png)
+
+See the beauty of the passing CI checks for your pull request!
+
+![Pull Request]({{ page.root }}/fig/hello-ci-pull-request-see-ci.png)
+
+
 
 {% include links.md %}
