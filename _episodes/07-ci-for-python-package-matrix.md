@@ -3,8 +3,7 @@ title: "Matrix"
 teaching: 5 
 exercises: 10
 questions:
-  - How do I run CI for multiple Python versions?
-  - How do I run CI for different platforms?
+  - How do I run CI for multiple Python versions and /or different platforms?
 objectives:
   - Don't Repeat Yourself (DRY)
   - Use a single job for multiple jobs
