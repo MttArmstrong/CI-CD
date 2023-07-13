@@ -182,7 +182,12 @@ Then, let's go into the Actions tab and run the Release job from the UI:
 > Does the CD run successfully?
 >
 > > ## Solution
-> > No. 
+> > Nope!
+> >
+> > The `dist` job passes but the `publish` job fails.
+> > The `publish` job cannot fine the artifact. 
+> > ![Release failing]({{ page.root }}/fig/python-cd-fail.png)
+> >
 > {: .solution }
 {: .challenge }
 
