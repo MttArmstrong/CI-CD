@@ -174,7 +174,7 @@ Let's push it and see our new CI for Python!
 ```bash
 git add .github/workflows/main.yml
 git commit -m "Adds Python 3.10 test to CI"
-git push -u origin add-ci
+git push
 ```
 
 Checkout the results:
