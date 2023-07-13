@@ -3,13 +3,13 @@ title: "CI for Python Package"
 teaching: 10
 exercises: 10
 questions:
-- How do I setup CI for a Python package in GitHub Actions?
+  - How do I setup CI for a Python package in GitHub Actions?
 objectives:
-- Learn basic setup for Python package GitHub Actions
-- Learn what automation is possible with GitHub Actions
+  - Learn about the Actions for GitHub Actions
+  - Learn basic setup for Python package GitHub Actions
 keypoints:
-- CI can help automated running tests for code changes to your Python package
-- Matrix can help DRY your CI for multi-version and cross-platform testing
+  - GitHub has a Marketplace of reusable Actions
+  - CI can help automated running tests for code changes to your Python package
 ---
 
 # Setup Python project
@@ -23,11 +23,11 @@ Now we will switch from setting up a general CI pipeline
 to more specifically setting up CI for our Python package needs.
 
 But first...
-
 > ## Activity: What do we need in CI for a Python package project?
 >
 > What are some of the things we want to automate checks for in CI for a Python Package?
-> What tools to use to accomplish these checks?
+>
+> What tools accomplish these checks?
 > 
 > > ## Solution
 > > Just some suggestions (not comprehensive):
@@ -38,13 +38,15 @@ But first...
 > > * Documentation builds (i.e. [sphinx][sphinx] )
 > > * Security vulnerabilities (i.e. [bandit][bandit])
 > > 
->{: .solution}
+> {: .solution}
 {: .challenge}
 
-When you are first starting out setting up CI,
-don't feel you need to add all the checks at the beginning of a project.
-First, pick the ones that are  "must haves" or easier to implement.
-Then, iteratively improve your pipeline.
+> ## CI development
+> When you are first starting out setting up CI,
+> don't feel you need to add all the checks at the beginning of a project.
+> First, pick the ones that are  "must haves" or easier to implement.
+> Then, iteratively improve your pipeline.
+{: .callout
 
 ## Setup Python environment in CI 
 
@@ -56,14 +58,15 @@ jobs:
   greeting:
     runs-on: ubuntu-latest
     steps:
-      -run: echo hello world
+      - name: Greeting!
+        run: echo hello world
 ~~~
 {: .language-yaml}
 
 Overall, we will want to get our CI to run our unit tests via [pytest][pytest].
 But first, let's figure out how to setup a Python environment.
 
-We will add another job (named `tests`)
+We will add another job (named `test-python-3-10`)
 and add the steps to setup a Python 3.10 environment to our YAML file:
 
 ~~~
@@ -75,7 +78,8 @@ jobs:
     steps:
       -run: echo hello world
 
-  tests:
+  test-python-3-10:
+    name: Check Python 3.10 on Ubuntu
     runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@v3
@@ -87,36 +91,43 @@ jobs:
 {: .language-yaml}
 
 You might be asking: _"What is going on with the `uses` command?"_
+
 Here, we are using what GitHub calls ["Actions"][actions].
 These are custom applications that,
 quoted from the documation link above,
  _"...performs a complex but frequently repeated task."_
 
 Second, you might ask: _"Okay... but what is it doing?"_
-We won't go into too much detail but mainly, the first one, `actions/checkout@v3`,
-checks out your code. 
+
+We won't go into too much detail but mainly, `actions/checkout@v3` checks out your code. 
 This one is used all the time.
 
-GitHub has what they call a "Marketplace" for "Actions" where you can search for them ([Marketplace for Actions][marketplace-actions])
-There is a Marketplace page for `actions/checkout` ([Marketplace page for `actions/checkout`][actions-checkout-marketplace] and also a GitHub repository for the source code to make this custom application ([GitHub for `actions/checkout`][actions-checkout-github].
+> ## GitHub Acions Marketplace
+> GitHub has what they call a ["Marketplace" for "Actions"][marketplace-actions] where you can search for them.
 
-The `@v3` in `actions/checkout@v3` signifies which version of the `actions/checkout` to use (v3.xx)
+There is a Marketplace page for `actions/checkout` ([Marketplace page][actions-checkout-marketplace]
+and also a GitHub repository for the source code ([GitHub][actions-checkout-github].
 
+The `@v3` in `actions/checkout@v3` signifies which version of the `actions/checkout` to use.
+
+So...
 > ## Activity: What does the `setup-python` Action do?
 >
 > What do you think the `actions/setup-python` does?
+>
 > Can you find the Marketplace page for `actions/setup-python`?
+>
 > Can you find the GitHub repository for `actions/setup-python`?
 >
-> Bonus: Can you find a file in the GitHub repo that gives you all the `with` options?
+> *Bonus:* Can you find a file in the GitHub repo that gives you all the `with` options?
 > 
 > > ## Solution
 > > * This action helps install a version of Python along with other options
-> > * Marketplace: [https://github.com/marketplace/actions/setup-python][https://github.com/marketplace/actions/setup-python]
+> > * Marketplace: [https://github.com/marketplace/actions/setup-python](https://github.com/marketplace/actions/setup-python)
 > > * GitHub repository: [https://github.com/actions/setup-python][actions-setup-python-github]
 > > 
-> > * Bonus: This will be in the `actions.yml`. Here is the `@v4` version of `actions.yml` [link](https://github.com/actions/setup-python/blob/v4/action.yml)
->{: .solution}
+> > * *Bonus:* This will be in the `actions.yml`. Here is the `@v4` version of `actions.yml`: [link](https://github.com/actions/setup-python/blob/v4/action.yml).
+> {: .solution}
 {: .challenge}
 
 ## Running your unit tests via CI
@@ -133,7 +144,8 @@ jobs:
     steps:
       -run: echo hello world
 
-  tests:
+  test-python-3-10:
+    name: Check Python 3.10 on Ubuntu
     runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@v3
@@ -151,46 +163,30 @@ jobs:
 {: .language-yaml}
 
 We see that we are installing our Python package
-with the `test` dependencies and then running `pytest`,
+with the test dependencies and then running `pytest`,
 just like we would locally.
 
 Let's push it and see our new CI for Python!
 
 ```bash
-cd intersect-training-cicd/
-git checkout -b add-tests-to-ci
 git add .github/workflows/main.yml
-git commit -m "Adds test to CI"
-git push -u origin add-tests-to-ci
+git commit -m "Adds Python 3.10 test to CI"
+git push -u origin add-ci
 ```
 
 Checkout the results:
 
 *TODO: add image of workflow...*
 
-## Pull Request
-
-Again, we'll open up a pull request for this branch.
-Once you are happy with your results merge this back into `main`.
-
-# Building multiple versions
-
-# Using Matrix in GitHub Actions
-
-## DRY your CI
-
-"DRY" is an ancronym for "Don't Repeat Yourself",
-meaning don't have repeated code in your software.
-This reduces repetition and avoids redundancy.
-
-We do this for our software.
-There is no reason we should not apply this principle to CI!
-
-## Allow a specific matrix job to fail
-
-Sometimes in your matrix, you want to push the boundaries of your testing.
-An example would be to test up to the latest alpha / beta release of a Python version.
-You do not want a failure in such cutting-edge, unstable tests stop your pipeline.
+> ## Activity: Running multiple jobs
+>
+> Did the jobs run in sequence or in parallel?
+>
+> > ## Solution
+> > Parallel. We will discuss this more when we get to the CD section.
+> > 
+> {: .solution}
+{: .challenge}
 
 {% include links.md %}
 
