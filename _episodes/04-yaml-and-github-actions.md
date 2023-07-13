@@ -18,9 +18,6 @@ keypoints:
 
 The GitHub Actions configurations are specified using YAML files stored in the`.github/workflows/` directory. 
 
-This is also covered in the [INTERSECT packaging lesson](https://intersect-training.org/packaging)
-in the ["CI with GitHub Actions"](https://intersect-training.org/packaging/08-continuous-integration/index.html) episode.
-
 Let us look at a basic example:
 ~~~
 name: example
