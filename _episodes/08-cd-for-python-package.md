@@ -279,6 +279,8 @@ We are ready to swap out the test publishing step with a more realistic example.
 Instead of creating a "production" version in [PyPi](https://pypi.org/),
 we can use [Test PyPi](https://test.pypi.org/) instead.
 
+### Get API token from TestPyPi -> GitHub Actions
+
 > ## Notice: The following requires createing an account on TestPyPi, putting secrets in the GitHub repository, and uploading a Python package to TestPyPi.
 > 
 > If you do not feel comfortable with these tasks, feel free to just read along
@@ -294,12 +296,31 @@ To setup using TestPyPi, we need to:
 * Go to `Settings` -> `Secrets` -> `Actions` in the GitHub UI
 ![secrets]({{ path.root }}/fig/github-secrets.md)
 
-* Add the TestPyPi API token to GitHub Secrets (call it `TESTPYPI_API_TOKEN`)
+* Add the TestPyPi API token to GitHub Secrets (call it `TEST_PYPI_API_TOKEN`)
 ![secrets-api-token]({{ path.root }}/fig/github-secrets-api-token.md)
 
 [workflow-dispatch]: https://docs.github.com/en/actions/using-workflows/events-that-trigger-workflows#workflow_dispatch
 [release-action]: https://docs.github.com/en/actions/using-workflows/events-that-trigger-workflows#release
 [release-github]: https://docs.github.com/en/repositories/releasing-projects-on-github/managing-releases-in-a-repository#creating-a-release
 [pipx]: https://pypa.github.io/pipx/
+
+Now that we have the credentials in GitHub for our PyPi package repository,
+let us write out the YAML.
+
+### Setup CD for publishing to TestPyPi
+
+For GitHub Actions, we can use the Action [`actions/gh-action-pypi-publish`](https://github.com/marketplace/actions/pypi-publish).
+
+Mainly, we need the following to replace our test publish step:
+~~~
+  - uses: pypa/gh-action-pypi-publish@release/v1
+    with:
+      password: ${{ secrets.TEST_PYPI_API_TOKEN }}
+      repository-url: https://test.pypi.org/legacy/
+~~~
+{: .language-yaml }
+
+The `secrets` is a way to gain access to and pull in secrets stored in GitHub into CI/CD using GitHub Actions.
+
 
 {% include links.md %}
