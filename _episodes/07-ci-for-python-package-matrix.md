@@ -155,10 +155,10 @@ There is no reason we should not apply this principle to CI!
 >     steps:
 >       - uses: actions/checkout@v3
 > 
->       - name: Setup Python {% raw %}${{ matrix.version }}{% endraw %}
+>       - name: Setup Python {% raw %}${{ matrix.python-version }}{% endraw %}
 >         uses: actions/setup-python@v4
 >         with:
->           python-version: {% raw %}${{ matrix.version }}{% endraw %}
+>           python-version: {% raw %}${{ matrix.python-version }}{% endraw %}
 > 
 >       - name: Install package
 >         run: python -m pip install -e .[test]
@@ -296,10 +296,10 @@ More detail: [https://docs.github.com/en/actions/using-workflows/workflow-syntax
 > >     steps:
 > >       - uses: actions/checkout@v3
 > > 
-> >       - name: Setup Python {% raw %}${{ matrix.version }}{% endraw %}
+> >       - name: Setup Python {% raw %}${{ matrix.python-version }}{% endraw %}
 > >         uses: actions/setup-python@v4
 > >         with:
-> >           python-version: {% raw %}${{ matrix.version }}{% endraw %}
+> >           python-version: {% raw %}${{ matrix.python-version }}{% endraw %}
 > > 
 > >       - name: Install package
 > >         run: python -m pip install -e .[test]
@@ -397,10 +397,10 @@ jobs:
 > >     steps:
 > >       - uses: actions/checkout@v3
 > > 
-> >       - name: Setup Python {% raw %}${{ matrix.version }}{% endraw %}
+> >       - name: Setup Python {% raw %}${{ matrix.python-version }}{% endraw %}
 > >         uses: actions/setup-python@v4
 > >         with:
-> >           python-version: {% raw %}${{ matrix.version }}{% endraw %}
+> >           python-version: {% raw %}${{ matrix.python-version }}{% endraw %}
 > > 
 > >       - name: Install package
 > >         run: python -m pip install -e .[test]
