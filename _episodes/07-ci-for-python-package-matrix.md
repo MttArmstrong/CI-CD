@@ -279,7 +279,7 @@ More detail: [https://docs.github.com/en/actions/using-workflows/workflow-syntax
 > > jobs:
 > > 
 > >   test-python-3-10:
-> >     name: Check Python ${{ matrix.python-version }} on Ubuntu
+> >     name: Check Python {% raw %}${{ matrix.python-version }}{% endraw %} on Ubuntu
 > >     runs-on: ubuntu-latest
 > >     continue-on-error: {% raw %}${{ matrix.allow_failure }}{% endraw %}
 > >     strategy:
@@ -372,7 +372,7 @@ jobs:
 > > jobs:
 > > 
 > >   test-python-3-10:
-> >     name: Check Python ${{ matrix.python-version }} on Ubuntu
+> >     name: Check Python {% raw %}${{ matrix.python-version }}{% endraw %} on {% raw %}${{ matrix.runs-on }}{% endraw %}
 > >     runs-on: [ubuntu-latest, windows-latest, macos-latest]
 > >     continue-on-error: {% raw %}${{ matrix.allow_failure }}{% endraw %}
 > >     strategy:
