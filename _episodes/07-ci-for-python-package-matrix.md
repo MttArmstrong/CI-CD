@@ -450,6 +450,7 @@ If you'd like, you can add more steps to the jobs to perform other checks
 
 Once you are happy, let's open up a pull request for this branch and get it merged back into `main`!
 
+## Clean up local repository
 To get your local repository up-to-date, you can run the following:
 ```
 git checkout main
