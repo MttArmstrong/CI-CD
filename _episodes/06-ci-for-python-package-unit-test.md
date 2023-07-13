@@ -106,8 +106,7 @@ This one is used all the time.
 > GitHub has what they call a ["Marketplace" for "Actions"][marketplace-actions] where you can search for them.
 {: .callout }
 
-There is a Marketplace page for `actions/checkout` ([Marketplace page][actions-checkout-marketplace]
-and also a GitHub repository for the source code ([GitHub][actions-checkout-github].
+There is a Marketplace page for `actions/checkout` ([Marketplace page][actions-checkout-marketplace]]) and also a GitHub repository for the source code ([GitHub][actions-checkout-github]).
 
 The `@v3` in `actions/checkout@v3` signifies which version of the `actions/checkout` to use.
 
