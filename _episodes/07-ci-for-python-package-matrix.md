@@ -345,6 +345,8 @@ Inside of the `runs-on` documentation, there is a list of labels we can use to s
 > > Mac: `macos-latest`
 > > Windows: `windows-latest`
 > >
+> {: .solution}
+{: .challenge}
 
 Using these labels, we could create the following setup to run on all three platforms!
 ~~~
