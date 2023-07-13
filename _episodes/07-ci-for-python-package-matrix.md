@@ -233,12 +233,12 @@ For this, we use `include` to add a single extra job to the matrix with "metadat
 ~~~
 strategy:
   matrix:
-    - python-versions: "3.12.0-beta.4"
+    - python-version: "3.12.0-beta.4"
       allow_failure: true
 ~~~
 {: .language-yaml }
 
-This will add the string `"3.12.0-beta.4"` to the `python-versions`
+This will add the string `"3.12.0-beta.4"` to the `python-version`
 list in matrix with the arbitrary variable `allow_failure` set to `true`
 as "metadata".
 We also must add the `allow_failure` "metadata" to the other members of the matrix (see below).
@@ -258,10 +258,10 @@ More detail: [https://docs.github.com/en/actions/using-workflows/workflow-syntax
 >     strategy:
 >       fail-fast: true
 >       matrix:
->         python-versions: ["3.10", "3.11"]
+>         python-version: ["3.10", "3.11"]
 >         allow_failure: [false]
 >       include:
->         - python-versions: "3.12.0-beta.4" 
+>         - python-version: "3.12.0-beta.4" 
 >           allow_failure: true
 > ~~~
 > {: .language-yaml}
@@ -288,7 +288,7 @@ More detail: [https://docs.github.com/en/actions/using-workflows/workflow-syntax
 > >         python-version: ["3.10", "3.11"]
 > >         allow_failure: [false]
 > >       include:
-> >         - python-versions: "3.12.0-beta.4" 
+> >         - python-version: "3.12.0-beta.4" 
 > >           allow_failure: true
 > >
 > >     steps:
@@ -381,7 +381,7 @@ jobs:
 > >         python-version: ["3.10", "3.11"]
 > >         allow_failure: [false]
 > >       include:
-> >         - python-versions: "3.12.0-beta.4" 
+> >         - python-version: "3.12.0-beta.4" 
 > >           allow_failure: true
 > >
 > >     steps:
