@@ -235,8 +235,9 @@ For this, we use `include` to add a single extra job to the matrix with "metadat
 ~~~
 strategy:
   matrix:
-    - python-version: "3.12.0-beta.4"
-      allow_failure: true
+    include:
+      - python-version: "3.12.0-beta.4"
+        allow_failure: true
 ~~~
 {: .language-yaml }
 
@@ -262,9 +263,9 @@ More detail: [https://docs.github.com/en/actions/using-workflows/workflow-syntax
 >       matrix:
 >         python-version: ["3.10", "3.11"]
 >         allow_failure: [false]
->       include:
->         - python-version: "3.12.0-beta.4" 
->           allow_failure: true
+>         include:
+>           - python-version: "3.12.0-beta.4"
+>             allow_failure: true
 > ~~~
 > {: .language-yaml}
 {: .callout }
@@ -289,9 +290,9 @@ More detail: [https://docs.github.com/en/actions/using-workflows/workflow-syntax
 > >       matrix:
 > >         python-version: ["3.10", "3.11"]
 > >         allow_failure: [false]
-> >       include:
-> >         - python-version: "3.12.0-beta.4" 
-> >           allow_failure: true
+> >         include:
+> >           - python-version: "3.12.0-beta.4"
+> >             allow_failure: true
 > >
 > >     steps:
 > >       - uses: actions/checkout@v3
@@ -390,9 +391,9 @@ jobs:
 > >       matrix:
 > >         python-version: ["3.10", "3.11"]
 > >         allow_failure: [false]
-> >       include:
-> >         - python-version: "3.12.0-beta.4" 
-> >           allow_failure: true
+> >         include:
+> >           - python-version: "3.12.0-beta.4"
+> >             allow_failure: true
 > >
 > >     steps:
 > >       - uses: actions/checkout@v3
@@ -415,11 +416,9 @@ jobs:
 Let's push these changes and see how it goes!
 
 ```bash
-cd intersect-training-cicd/
-git checkout -b add-ci
 git add .github/workflows/main.yml
 git commit -m "Adds cross-platform testing to CI"
-git push -u origin add-ci
+git push
 ```
 
 ## Pull Request
