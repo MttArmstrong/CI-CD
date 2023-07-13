@@ -48,10 +48,10 @@ Since we're adding a new feature (adding CI) to our project, we'll work in a fea
 
 ```bash
 cd intersect-training-cicd/
-git checkout -b add-ci-via-actions
+git checkout -b add-ci
 git add .github/workflows/main.yml
 git commit -m "Adds initial GitHub Actions for CI"
-git push -u origin add-ci-via-actions
+git push -u origin add-ci
 ```
 
 And that's it!
