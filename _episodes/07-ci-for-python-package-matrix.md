@@ -118,6 +118,8 @@ git push
 
 Check the output!
 
+![GitHub Actions multi-version]({{ page.root }}/fig/python-ci-matrix-naive-approach.png)
+
 Now, we do technically have multiple-versions of Python supported.
 
 Yet, we just added 13 lines of identical code with only one character change...
