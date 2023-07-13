@@ -177,9 +177,14 @@ git commit -m "Adds Python 3.10 test to CI"
 git push
 ```
 
-Checkout the results:
+Checkout the results! We see that we now have two jobs running!:
 
-*TODO: add image of workflow...*
+![Actions]({{ page.root }}/fig/python-ci-actions.png)
+
+Similarly, we see our open Pull Request has updated dynamically with updates!
+
+![Pull Request]({{ page.root }}/fig/python-ci-pull-request.png)
+
 
 > ## Activity: Running multiple jobs
 >
