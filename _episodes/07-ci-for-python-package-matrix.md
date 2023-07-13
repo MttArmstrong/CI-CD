@@ -436,6 +436,10 @@ git commit -m "Adds cross-platform testing to CI"
 git push
 ```
 
+We see that now we are also testing across all the platforms!
+
+![GitHub Actions cross platform]({{ page.root }}/fig/python-ci-matrix-cross-platform.png)
+
 ## Pull Request
 
 That wraps up the CI portion for the Python package.
