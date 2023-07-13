@@ -192,7 +192,7 @@ Sometimes in your matrix, you want to push the boundaries of your testing.
 An example would be to test up to the latest alpha / beta release of a Python version.
 You do not want a failure in such cutting-edge, unstable tests stopping your CI.
 
-At time of writing, the latest supported beta version of Python for the `actions/python-versions` is 3.12.0-beta.4 based on their [GitHub Releases](https://github.com/actions/python-versions/releases)
+At time of writing, the latest supported beta version of Python for the `actions/python-versions` is 3.12.0-beta.4 based on their [GitHub Releases](https://github.com/actions/python-versions/releases).
 
 Let's add this to our python version testing.
 
@@ -200,11 +200,9 @@ Let's add this to our python version testing.
 
 This gets a little complicated, but there are a few flags we need to set.
 
-For the matrix case, Github Actions fails the entire workflow and stops all the running jobs if any of the jobs in the matrix fails. This can be prevented by using `fail-fast: false` key:value.
-
 GitHub Actions will cancel all in-progress and queued jobs in the matrix if any job in the matrix fails.
 
-To disable this, we need to disable `fail-fast` on the matrix strategy.
+To disable this, we need to disable `fail-fast` in the matrix strategy.
 ~~~
 strategy:
   fail-fast: false
