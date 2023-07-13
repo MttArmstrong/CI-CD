@@ -256,7 +256,7 @@ More detail: [https://docs.github.com/en/actions/using-workflows/workflow-syntax
 >     runs-on: ubuntu-latest
 >     continue-on-error: {% raw %}${{ matrix.allow_failure }}{% endraw %}
 >     strategy:
->       fail-fast: true
+>       fail-fast: false 
 >       matrix:
 >         python-version: ["3.10", "3.11"]
 >         allow_failure: [false]
@@ -283,7 +283,7 @@ More detail: [https://docs.github.com/en/actions/using-workflows/workflow-syntax
 > >     runs-on: ubuntu-latest
 > >     continue-on-error: {% raw %}${{ matrix.allow_failure }}{% endraw %}
 > >     strategy:
-> >       fail-fast: true
+> >       fail-fast: false
 > >       matrix:
 > >         python-version: ["3.10", "3.11"]
 > >         allow_failure: [false]
@@ -376,7 +376,7 @@ jobs:
 > >     runs-on: [ubuntu-latest, windows-latest, macos-latest]
 > >     continue-on-error: {% raw %}${{ matrix.allow_failure }}{% endraw %}
 > >     strategy:
-> >       fail-fast: true
+> >       fail-fast: false
 > >       matrix:
 > >         python-version: ["3.10", "3.11"]
 > >         allow_failure: [false]
