@@ -357,10 +357,16 @@ jobs:
 ~~~
 {: .language-yaml}
 
-> ## Not best practice to use "latest"...
-> It is not the best practice to use "latest" versions for the platforms.
-> This practice is essentially testing "experimental" versions of the platforms,
-> instead of the Python version like with the Python 3.12.0-beta.4 example.
+> ## Not necessarily the best practice to use "latest"...
+> It is arguable but... using "latest" versions for the platforms may not be the best practice.
+> This practice is essentially testing versions of the platforms that will change, eventually,
+> when the newest OS platform version is created for "latest".
+>
+> This leaves you vulnerable to your CI breaking due to no change to the code.
+> 
+> However, this is a very infrequent change and probably fine to stay with "latest"
+> so you don't have to change when the other eventual change will occur:
+> a pinned version of the OS platform is deprecated and no longer available!
 {: .callout }
 
 > ## Action: Add cross-platform testing to CI YAML
