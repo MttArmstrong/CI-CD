@@ -330,4 +330,19 @@ The `secrets` is a way to gain access to and pull in secrets stored in GitHub in
 >
 {: .callout }
 
+After uploading the following, commiting the changes, and doing a "release",
+you will see something like the following:
+![fig]({{ path.root }}/fig/testpypi-github-actions-success.png)
+
+Also, you can go to your projects page and be able to see the new package show up!
+  - [https://test.pypi.org/manage/projects/](https://test.pypi.org/manage/projects/)
+
+# Wrap up
+
+Now, we have CD setup for a Python package to a PyPi registry!
+
+Feel free to change out the triggers, switch to PyPi, or add multiple PyPi repositories for deployment.
+
+
+
 {% include links.md %}
