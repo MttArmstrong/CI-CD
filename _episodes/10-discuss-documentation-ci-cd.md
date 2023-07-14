@@ -57,12 +57,12 @@ We just need to ask the questions:
 > Considering we use sphinx to create files and want a documentation webpage,
 > what are your answers to the questions above?
 >
-> For CI, what will we automate and check for documentation?
-> For CD, what will we be deploying for documentation?
+> * For CI, what will we automate and check for documentation?
+> * For CD, what will we be deploying for documentation?
 >
 > > ## Solution
-> > For CI: we want to automate building the documetation HTML files
-> > FOr CD: we want to automatically publish the artifact for the static webpage and, eventually, deploy it onto a web server.
+> > * For CI: we want to automate building the documetation HTML files
+> > * For CD: we want to automatically publish the artifact for the static webpage and, eventually, deploy it onto a web server.
 > {: .solution }
 {: .challenge }
 
