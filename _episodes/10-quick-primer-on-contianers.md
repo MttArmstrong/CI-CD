@@ -104,3 +104,5 @@ Next, we will take these together and attempt to publish a container image as a 
 
 [docker]: https://docs.docker.com/get-docker/
 [carpentry-docker]: https://hsf-training.github.io/hsf-training-docker/
+
+{% include links.md %}
