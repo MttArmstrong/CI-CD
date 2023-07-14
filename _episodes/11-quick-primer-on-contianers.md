@@ -60,7 +60,7 @@ They are also super handy for development like in testing with multiple software
 We will go over very, very little about using Docker in this lesson.
 There are [other Carpentries][carpentry-docker] which do go over using Docker for scientific computing for the interested reader.
 
-> # Actions: What we will need
+> ### What we will need
 > The very high-level Docker understanding we need is:
 > * A container image is created in Docker using a `Dockerfile`: a file that defines the container image build
 > * The command `docker build --file Dockerfile --tag <name of image> .` (or shorthand, `docker build -t <name of image> .`) will build the container image
@@ -89,7 +89,7 @@ DockerHub is not the only container image registry software.
 It is probably the most popular.
 But for now, you can consider it equivalent to PyPi but for containers instead of Python packages.
 
-# # Actions: What we will need
+# ### What we will need
 > The very high-level Docker understanding we need is:
 > * After building an image, we can put it in a container image registry via `docker push <name of image>`
 > * We can retrieve an image from a container image registry via `docker pull <name of image>`
