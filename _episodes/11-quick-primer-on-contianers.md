@@ -3,7 +3,7 @@ title: "(Bonus) Quick primer on Containers"
 teaching: 10 
 exercises: 0 
 questions:
-   - what is a container and why would I want to publish one?
+   - What is a container and why would I want to publish one?
 objectives:
   - Learn high-level overview of containers
   - Learn what applications fit better for containerization
