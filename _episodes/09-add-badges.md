@@ -1,3 +1,14 @@
+---
+title: "Badge for CI/CD"
+teaching: 5
+exercises: 0 
+questions:
+   - How to add something that communicates / visualizes the status of CI/CD?
+objectives:
+  - Add a badge to project for CI/CD status
+keypoints:
+  - Badges are fun! 
+---
 
 
 # Badges
