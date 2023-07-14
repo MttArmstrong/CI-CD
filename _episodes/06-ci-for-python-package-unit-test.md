@@ -33,7 +33,7 @@ But first...
 > > Just some suggestions (not comprehensive):
 > > * Testing passes ([pytest][pytest] for unit testing or [nox][nox] for parallel Python environment testing)
 > > * Code is of quality (i.e. [ruff][ruff] or [flake8][flake8] for [linting][lint] or [mccabe][mccabe] for reducing [cyclomatic complexity][cc]
-> > * Code coforms to project formatting guide (i.e. [black][black] for formatting)
+> > * Code conforms to project formatting guide (i.e. [black][black] for formatting)
 > > * Code testing coverage does not drop significanly (i.e. [pytest-cov][pytest-cov] or [Coverage.py][coverage])
 > > * Static type checking (i.e. [mypy][mypy] )
 > > * Documentation builds (i.e. [sphinx][sphinx] )
