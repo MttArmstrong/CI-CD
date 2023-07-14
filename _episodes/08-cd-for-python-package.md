@@ -222,7 +222,7 @@ Let's add a "test" `publish` job.
 > > name: Releases
 > >
 > > on:
-> >   workflow_dispatch:
+> >   workflow-dispatch:
 > >   release:
 > >     types:
 > >       - published
