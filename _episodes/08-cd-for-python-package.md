@@ -178,6 +178,7 @@ Then, let's go into the Actions tab and run the Release job from the UI:
 ![Release manual]({{ page.root }}/fig/python-cd-run-workflow.png)
 
 DEBUG
+![Release manual]({{ page.root }}/fig/python-cd-pipeline-pass.png)
 ![pipeline]({{ path.root }}/fig/python-cd-pipeline-pass.png)
 
 > ## Action: Test out the publish YAML
