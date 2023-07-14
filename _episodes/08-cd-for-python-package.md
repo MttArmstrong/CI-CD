@@ -343,6 +343,4 @@ Now, we have CD setup for a Python package to a PyPi registry!
 
 Feel free to change out the triggers, switch to PyPi, or add multiple PyPi repositories for deployment.
 
-
-
 {% include links.md %}
