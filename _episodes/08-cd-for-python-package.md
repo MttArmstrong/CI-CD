@@ -177,9 +177,6 @@ Then, let's go into the Actions tab and run the Release job from the UI:
 
 ![Release manual]({{ page.root }}/fig/python-cd-run-workflow.png)
 
-DEBUG
-![Release manual]({{ page.root }}/fig/python-cd-pipeline-pass.png)
-![pipeline]({{ path.root }}/fig/python-cd-pipeline-pass.png)
 
 > ## Action: Test out the publish YAML
 >
@@ -194,9 +191,6 @@ DEBUG
 > >
 > {: .solution }
 {: .challenge }
-
-DEBUG
-![pipeline]({{ path.root }}/fig/python-cd-pipeline-pass.png)
 
 We previously asked about jobs running in sequence or parallel.
 
@@ -275,7 +269,7 @@ git push
 
 Perform another manual run for the Releases workflow and check the results!
 
-![pipeline]({{ path.root }}/fig/python-cd-pipeline-pass.png)
+![Pipeline passes]({{ page.root }}/fig/python-cd-pipeline-pass.png)
 
 We have a successfful pipeline with the proper dependencies and the artifacts!
 
