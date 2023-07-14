@@ -197,6 +197,25 @@ Then, navigate to `http://localhost:8080`.
 
 Now we can allow operations or system administrators to serve our docs using containers!
 
+# Side note about our "CD"
+
+> ## Action: Question about our CD
+>
+> So we just setup CD for a documentation server right?
+>
+> > ## Solution
+> >
+> > Not quite. We are doing CD for the "publshing" part.
+> > 
+> > Yet, CD is continuous *delivery* or *deployment*.
+> > We really have not deployed our server.
+> > Someone else still has to do this for us right now.
+> > 
+> > True CD for a pipeline like this would include deploying this onto the server as a website
+> >
+> {: .solution }
+{: .challenge }
+
 # Wrap up
 
 This wraps up CI/CD for containers.
