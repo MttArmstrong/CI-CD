@@ -10,8 +10,6 @@ Part of this lesson consists in learning how to make scripts exit correctly. At 
 
 To know whether your Python has `pytest`, just run `python -c "import pytest"`. If this command returns nothing, it means everything is fine. Otherwise, please visit [https://docs.pytest.org/en/stable/getting-started.html](https://docs.pytest.org/en/stable/getting-started.html) for installation.
 
-``
-
 ## Set up Python project code
 
 > ## Notice
@@ -56,6 +54,11 @@ To know whether your Python has `pytest`, just run `python -c "import pytest"`. 
   Check again the name of the current remote:
   ```bash
   git remote -v
+  ```
+
+  Checkout `main` (if not already)
+  ```bash
+  git checkout -b main
   ```
 
   The last step is to run the push command as follows
