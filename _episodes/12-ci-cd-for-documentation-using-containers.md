@@ -86,8 +86,6 @@ to be shared, like we did with TestPyPi.
 
 Also, it is free! DockerHub is as well, mostly.
 
-# Setup CD for documentation
-
 [dockerhub]: https://hub.docker.com/
 [ghcr]: https://docs.github.com/en/packages/working-with-a-github-packages-registry/working-with-the-container-registry
 
