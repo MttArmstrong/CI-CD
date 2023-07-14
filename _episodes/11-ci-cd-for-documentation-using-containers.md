@@ -128,37 +128,46 @@ on:
 jobs:
   publish-docs-using-docker:
     runs-on: ubuntu-latest
-      steps:
-        -
-          name: Checkout
-          uses: actions/checkout@v3
-        -
-          name: Set up Docker Buildx
-          uses: docker/setup-buildx-action@v2
-        -
-          name: Login to GitHub Container Registry
-          uses: docker/login-action@v2
-          with:
-            registry: ghcr.io
-            username: ${{ github.actor }}
-            password: ${{ secrets.GITHUB_TOKEN }}
-        -
-          name: Build and push catalog image
-          uses: docker/build-push-action@v4
-          with:
-            context: .
-            push: true 
-            platforms: linux/amd64,linux/arm64
-            tags: ghcr.io/${{ github.repository_owner }}/intersect-training-cicd:${{ github.ref_name }}
+    permissions:
+      packages: write
+    steps:
+      -
+        name: Checkout
+        uses: actions/checkout@v3
+
+      -
+        name: Set up Docker Buildx
+        uses: docker/setup-buildx-action@v2
+
+      -
+        name: Login to GitHub Container Registry
+        uses: docker/login-action@v2
+        with:
+          registry: ghcr.io
+          username: ${{ github.actor }}
+          password: ${{ secrets.GITHUB_TOKEN }}
+
+      -
+        name: Build and push catalog image
+        uses: docker/build-push-action@v4
+        with:
+          context: .
+          push: true 
+          platforms: linux/amd64,linux/arm64
+          tags: ghcr.io/${{ github.repository }}:${{ github.ref_name }}
 ~~~
 {: .language-yaml }
 
 A few things to note:
+* The `permissions:packages:write` is important to allow this job to write to [GitHub Packages][github-packages], which the container registry is part of.
 * In `docker/login-action`, `github.actor` is a special variable GitHub provides for the runner to use as a "username". Similar to `__token__` usernames.
 * In `docker/login-action`, `secrets.GITHUB_TOKEN` is a secret GitHub provides for the runner to log back into other GitHub services. Reference: [https://docs.github.com/en/actions/security-guides/automatic-token-authentication](https://docs.github.com/en/actions/security-guides/automatic-token-authentication)
 * In `docker/build-push-action`, the `push: true` is what tells this action we want to push the image to the container image registry
 * In `docker/build-push-action`, we are building for multiple hardware platforms via `platforms: linux/amd64,linux/arm64`.
 * In `docker/build-push-action`, the `tags` is essentially the tag name others will use to "pull" the image from.
+* We are using some other `github.*` variables in the `tags` to construct the image name in the container registry:
+  - `github.repository`: Repository name (i.e. `marshallmcdonnell/intersect-training-cicd`)
+  - `github.ref_name`: Short name of branch or tag, using it as a sort of "version number" (i.e. `add-docs-cd` or `v0.1.0`)
 
 Let's push this to the repository and see what happens!
 ```bash
