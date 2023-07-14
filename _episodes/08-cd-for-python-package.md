@@ -177,6 +177,9 @@ Then, let's go into the Actions tab and run the Release job from the UI:
 
 ![Release manual]({{ page.root }}/fig/python-cd-run-workflow.png)
 
+DEBUG
+![pipeline]({{ path.root }}/fig/python-cd-pipeline-pass.png)
+
 > ## Action: Test out the publish YAML
 >
 > Does the CD run successfully?
@@ -190,6 +193,9 @@ Then, let's go into the Actions tab and run the Release job from the UI:
 > >
 > {: .solution }
 {: .challenge }
+
+DEBUG
+![pipeline]({{ path.root }}/fig/python-cd-pipeline-pass.png)
 
 We previously asked about jobs running in sequence or parallel.
 
