@@ -336,7 +336,8 @@ The `secrets` is a way to gain access to and pull in secrets stored in GitHub in
 
 After uploading the following, commiting the changes, and doing a "release",
 you will see something like the following:
-![fig]({{ path.root }}/fig/testpypi-github-actions-success.png)
+
+![Success actions]({{ page.root }}/fig/testpypi-github-actions-success.png)
 
 Also, you can go to your projects page and be able to see the new package show up!
   - [https://test.pypi.org/manage/projects/](https://test.pypi.org/manage/projects/)
