@@ -288,17 +288,17 @@ we can use [Test PyPi](https://test.pypi.org/) instead.
 
 To setup using TestPyPi, we need to:
 * [Register](https://test.pypi.org/account/register/) for an account on TestPyPi
-![register]({{ path.root }}/fig/testpypi-register.md)
+![register]({{ path.root }}/fig/testpypi-register.png)
 
 * Get an [API token](https://pypi.org/help/#apitoken) so we can have GitHub authenticate to TestPyPi on our behalf. Go to the TestPyPi and [get an API token](https://test.pypi.org/manage/account/#api-tokens)
 
-![token]({{ path.root }}/fig/testpypi-api-token.md)
+![token]({{ path.root }}/fig/testpypi-api-token.png)
 
 * Go to `Settings` -> `Secrets` -> `Actions` in the GitHub UI
-![secrets]({{ path.root }}/fig/github-secrets.md)
+![secrets]({{ path.root }}/fig/github-secrets.png)
 
 * Add the TestPyPi API token to GitHub Secrets (call it `TEST_PYPI_API_TOKEN`)
-![secrets-api-token]({{ path.root }}/fig/github-secrets-api-token.md)
+![secrets-api-token]({{ path.root }}/fig/github-secrets-api-token.png)
 
 [workflow-dispatch]: https://docs.github.com/en/actions/using-workflows/events-that-trigger-workflows#workflow_dispatch
 [release-action]: https://docs.github.com/en/actions/using-workflows/events-that-trigger-workflows#release
