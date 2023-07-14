@@ -176,4 +176,40 @@ git commit -m "Adds CD for docs to container image registry"
 git push -u origin add-docs-cicd
 ```
 
+![GitHub Actions docs CD]({{ page.root }}/fig/github-container-package-cd.png)
+
+Looks like it passed!
+
+And if we look at the "Packages" tab in GitHub, we should see our package!
+
+![GitHub Actions docs package]({{ page.root }}/fig/github-container-package.png)
+
+Going into the package, we can see our Users are given instructions on how to get this container via `docker pull`
+
+![GitHub Actions docs package]({{ page.root }}/fig/github-container-package-page.png)
+
+We can launch this container, mapping from the container port 80 (HTTP) to one on our host machine (8080), to spin up our docs server!
+```
+docker run -p 8080:80 <container image tag>
+```
+
+Then, navigate to `http://localhost:8080`.
+
+Now we can allow operations or system administrators to serve our docs using containers!
+
+# Wrap up
+
+This wraps up CI/CD for containers.
+
+Once you are happy, let's use our open pull request for this branch and get it merged back into `main`!
+
+## Clean up local repository
+To get your local repository up-to-date, you can run the following:
+```
+git checkout main
+git pull
+git remote prune origin # prune any branches deleted in the remote / GitHub that are still local
+git branch -D add-docs-cicd # optional
+```
+
 {% include links.md %}
