@@ -268,7 +268,7 @@ git push
 
 Perform another manual run for the Releases workflow and check the results!
 
-![pipeline]({{ path.root }}/fig/python-cd-pipeline-pass.md)
+![pipeline]({{ path.root }}/fig/python-cd-pipeline-pass.png)
 
 We have a successfful pipeline with the proper dependencies and the artifacts!
 
