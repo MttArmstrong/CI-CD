@@ -1,6 +1,6 @@
 ---
 title: "(Bonus) Quick primer on Containers"
-teaching: 5
+teaching: 10 
 exercises: 0 
 questions:
    - what is a container and why would I want to publish one?

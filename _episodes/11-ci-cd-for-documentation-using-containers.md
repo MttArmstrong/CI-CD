@@ -1,7 +1,7 @@
 ---
 title: "(Bonus) Implementing CI/CD for documentation using containers"
-teaching: 5
-exercises: 0
+teaching: 10
+exercises: 10 
 questions:
    - How to setup CI/CD for documentation using containers?
 objectives:
