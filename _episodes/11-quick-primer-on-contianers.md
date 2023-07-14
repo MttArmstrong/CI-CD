@@ -95,6 +95,16 @@ But for now, you can consider it equivalent to PyPi but for containers instead o
 > * We can retrieve an image from a container image registry via `docker pull <name of image>`
 > * We can rename a contianer image via `docker tag <original tag> <new tag>`
 {: .callout }
+
+# Overall Docker Architecture
+
+This graphic helps illustrate what we are doing with our `docker build`, `docker run`, `docker pull` and `docker push` commands we will be using:
+
+![Docker arch]({{ page.root }}/fig/docker-architecture.png)
+
+[image source](https://jerrelysan.blogspot.com/2021/06/enter-in-docker-container-what-is.html)
+
+
 ## Wrap up
 
 Now we have an idea of what we what to do for documentation CI/CD
