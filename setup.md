@@ -16,99 +16,13 @@ To know whether your Python has `pytest`, just run `python -c "import pytest"`. 
 > We will be reusing the materials from the [INTERSECT packaging lesson](https://intersect-training.org/packaging) for our Python project code sample.
 {: .callout}
 
-- Create a new project on your personal GitHub account and name it `intersect-training-cicd`.
+- Create a new project from template [https://github.com/marshallmcdonnell/intersect-training-packaging-example](https://github.com/marshallmcdonnell/intersect-training-packaging-example) 
+- Name it `intersect-training-cicd`.
 
-  ![example of a properly-filled-in blank project form for gitlab]({{site.baseurl}}/fig/blank-project-form.png)
+  ![example of template]({{site.baseurl}}/fig/pick_template.png)
+  ![example of filling out template]({{site.baseurl}}/fig/template_repository.png)
   {: .callout}
 
-
-### Get via git clone...
-
-- Clone the pre-setup repository
-
-  Open a terminal and clone the repository that contains files required for this lesson.
-
-  ```bash
-  git clone git@github.com:marshallmcdonnell/intersect-training-packaging-example.git intersect-training-cicd
-  cd intersect-training-cicd
-  ```
-
-- Add the code to your personal GitHub account
-
-  At the moment, your clone is the remote repository stored on someone GitHub account. To get the name of the existing remote use
-  ```bash
-  git remote -v # -v stands for verbose
-  ```
-
-  ```
-  origin	git@github.com:marshallmcdonnell/intersect-training-packaging-example.git (fetch)
-  origin	git@github.com:marshallmcdonnell/intersect-training-packaging-example.git (push)
-  ```
-  {: .output}
-
-  You have to change remote's URL in order to be able to add the code to your personal GitHub account.
-
-  ```bash
-  git remote set-url origin git@github.com:<GitHub username>/intersect-training-cicd.git
-  ```
-  Check again the name of the current remote:
-  ```bash
-  git remote -v
-  ```
-
-  Checkout `main` (if not already)
-  ```bash
-  git checkout -b main
-  ```
-
-  The last step is to run the push command as follows
-  ```bash
-  git push -u origin main
-  ```
-
-### Get via download...
-
-- Download the [zip for intersect-training-cicd][download-site]
-
-- Unzip:
-
-  ```bash
-  unzip intersect-training-cicd.zip
-  cd intersect-training-cicd/
-  ```
-
-- Add the code to your personal GitHub account
-
-  Make this diretory a local git repository
-  ```bash
-  git init
-  ```
-
-  Set the remote for the local repository using the repository you made above
-  ```bash
-  git remote add origin git@github.com:<GitHub username>/intersect-training-cicd.git
-  ```
-
-  Check the name of the current remote:
-  ```bash
-  git remote -v
-  ```
-
-  Checkout `main` (if not already)
-  ```bash
-  git checkout -b main
-  ```
-
-  Stage and commit new project changes to `main`
-  ```bash
-  git add .
-  git commit -m "Adds initial project example"
-  ```
-
-  The last step is to run the push command as follows
-  ```bash
-  git push -u origin main
-  ```
 
 If you're having issues, **please let us know immediately**
 since you might not be able to follow this lesson without a proper setup.
